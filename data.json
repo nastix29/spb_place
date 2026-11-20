@@ -16,9 +16,49 @@
    "created": 3
   },
   "theatre": {
-   "name": "Театры",
+   "name": "Театры и спектакли",
    "desc": "Спектакли и сцены",
    "created": 4
+  },
+  "fav": {
+   "name": "Любимые блюда",
+   "desc": "что именно заказывать, проверено",
+   "created": 10
+  },
+  "eat": {
+   "name": "Еда",
+   "desc": "где вкусно поесть и попить",
+   "created": 11
+  },
+  "budget": {
+   "name": "Бюджетно",
+   "desc": "вкусно и недорого",
+   "created": 12
+  },
+  "bday": {
+   "name": "На день рождения",
+   "desc": "где радуют в др",
+   "created": 13
+  },
+  "cinema": {
+   "name": "Кино",
+   "desc": "кинотеатры",
+   "created": 14
+  },
+  "expo": {
+   "name": "Выставки",
+   "desc": "музеи и выставочные пространства",
+   "created": 15
+  },
+  "wish": {
+   "name": "Хотелки и развлечения",
+   "desc": "куда сходить за впечатлениями",
+   "created": 16
+  },
+  "photo": {
+   "name": "Фотостудии",
+   "desc": "",
+   "created": 17
   }
  },
  "places": {
@@ -329,10 +369,11 @@
    ],
    "lists": [
     "friend",
-    "together"
+    "together",
+    "wish"
    ],
    "log": [],
-   "mine": "",
+   "mine": "Хочу сходить на ночь",
    "rating": 0,
    "created": 114
   },
@@ -516,6 +557,466 @@
    "mine": "",
    "rating": 0,
    "created": 123
+  },
+  "p24": {
+   "name": "Эрмитаж",
+   "cat": "culture",
+   "addr": "Дворцовая пл., 2",
+   "lat": 59.9398,
+   "lng": 30.3146,
+   "status": "want",
+   "tags": [],
+   "lists": [
+    "budget",
+    "expo"
+   ],
+   "log": [],
+   "mine": "",
+   "rating": 0,
+   "created": 124
+  },
+  "p25": {
+   "name": "Surf Coffee",
+   "cat": "coffee",
+   "addr": "сеть кофеен",
+   "lat": null,
+   "lng": null,
+   "status": "want",
+   "tags": [],
+   "lists": [
+    "eat",
+    "bday"
+   ],
+   "log": [],
+   "mine": "В день рождения — бесплатный кофе",
+   "rating": 0,
+   "created": 125,
+   "eat": "раф «солёная карамель» — очень вкусный"
+  },
+  "p26": {
+   "name": "Бургер Кинг",
+   "cat": "food",
+   "addr": "сеть",
+   "lat": null,
+   "lng": null,
+   "status": "want",
+   "tags": [],
+   "lists": [
+    "eat",
+    "fav"
+   ],
+   "log": [],
+   "mine": "",
+   "rating": 0,
+   "created": 126,
+   "eat": "воппер · горячий шоколадный брауни с мороженым · картошка фри с кетчупом"
+  },
+  "p27": {
+   "name": "Вкусно — и точка",
+   "cat": "food",
+   "addr": "сеть",
+   "lat": null,
+   "lng": null,
+   "status": "want",
+   "tags": [],
+   "lists": [
+    "eat"
+   ],
+   "log": [],
+   "mine": "",
+   "rating": 0,
+   "created": 127,
+   "eat": "чикен премьер · цезарь ролл · раф · мороженое «Айс де люкс» с клубникой или карамелью — обязательно с шоколадной крошкой, можно двойной"
+  },
+  "p28": {
+   "name": "Каро 11 Охта Молл",
+   "cat": "culture",
+   "addr": "Брантовская дорога, 3, ТРЦ «Охта Молл»",
+   "lat": null,
+   "lng": null,
+   "status": "want",
+   "tags": [],
+   "lists": [
+    "cinema"
+   ],
+   "log": [],
+   "mine": "Там диванчики",
+   "rating": 0,
+   "created": 128
+  },
+  "p29": {
+   "name": "Популярный кинотеатр в центре",
+   "cat": "culture",
+   "addr": "",
+   "lat": null,
+   "lng": null,
+   "status": "want",
+   "tags": [
+    "уточнить"
+   ],
+   "lists": [
+    "cinema"
+   ],
+   "log": [],
+   "mine": "Какой именно — дописать",
+   "rating": 0,
+   "created": 129
+  },
+  "p30": {
+   "name": "Скороход",
+   "cat": "culture",
+   "addr": "лофт-квартал «Скороход», Московский район",
+   "lat": null,
+   "lng": null,
+   "status": "want",
+   "tags": [],
+   "lists": [
+    "theatre"
+   ],
+   "log": [],
+   "mine": "Очень советовали «Билли Миллигана» (4 часа) и «Декабристок»",
+   "rating": 0,
+   "created": 130,
+   "url": "https://www.skorohod.me/"
+  },
+  "p31": {
+   "name": "Humble Cookies",
+   "cat": "coffee",
+   "addr": "сеть",
+   "lat": null,
+   "lng": null,
+   "status": "want",
+   "tags": [],
+   "lists": [
+    "eat"
+   ],
+   "log": [],
+   "mine": "Вкусные печеньки",
+   "rating": 0,
+   "created": 131
+  },
+  "p32": {
+   "name": "Цех 85",
+   "cat": "coffee",
+   "addr": "сеть пекарен",
+   "lat": null,
+   "lng": null,
+   "status": "want",
+   "tags": [],
+   "lists": [
+    "fav"
+   ],
+   "log": [],
+   "mine": "",
+   "rating": 0,
+   "created": 132,
+   "eat": "вензель с малиной — именно в «Цехе 85», не в «Буше»!"
+  },
+  "p33": {
+   "name": "Контакт бар",
+   "cat": "bar",
+   "addr": "сеть баров",
+   "lat": null,
+   "lng": null,
+   "status": "want",
+   "tags": [],
+   "lists": [
+    "fav"
+   ],
+   "log": [],
+   "mine": "",
+   "rating": 0,
+   "created": 133,
+   "eat": "картошка с соусом «1000 островов» — ААААА"
+  },
+  "p34": {
+   "name": "Франк бар (Баста)",
+   "cat": "food",
+   "addr": "",
+   "lat": null,
+   "lng": null,
+   "status": "want",
+   "tags": [],
+   "lists": [
+    "fav"
+   ],
+   "log": [],
+   "mine": "",
+   "rating": 0,
+   "created": 134,
+   "eat": "мясной салат и рёбрышки"
+  },
+  "p35": {
+   "name": "Булочная Вольчека",
+   "cat": "coffee",
+   "addr": "сеть",
+   "lat": null,
+   "lng": null,
+   "status": "want",
+   "tags": [],
+   "lists": [
+    "fav"
+   ],
+   "log": [],
+   "mine": "",
+   "rating": 0,
+   "created": 135,
+   "eat": "шарлотка"
+  },
+  "p36": {
+   "name": "Усы Лисы",
+   "cat": "food",
+   "addr": "Бухарестская ул., 30, 3 этаж",
+   "lat": null,
+   "lng": null,
+   "status": "want",
+   "tags": [],
+   "lists": [
+    "fav"
+   ],
+   "log": [],
+   "mine": "",
+   "rating": 0,
+   "created": 136,
+   "eat": "куриный суп и пицца барбекю"
+  },
+  "p37": {
+   "name": "Теремок",
+   "cat": "food",
+   "addr": "сеть",
+   "lat": null,
+   "lng": null,
+   "status": "want",
+   "tags": [],
+   "lists": [
+    "fav",
+    "budget"
+   ],
+   "log": [],
+   "mine": "",
+   "rating": 0,
+   "created": 137,
+   "eat": "блин со сгущёнкой или клубникой · куриный суп"
+  },
+  "p38": {
+   "name": "Жизнь Март",
+   "cat": "market",
+   "addr": "сеть супермаркетов",
+   "lat": null,
+   "lng": null,
+   "status": "want",
+   "tags": [],
+   "lists": [
+    "budget",
+    "eat"
+   ],
+   "log": [],
+   "mine": "Вкусная готовая еда — похоже на ВкусВилл, но дешевле",
+   "rating": 0,
+   "created": 138,
+   "eat": "корн-доги и онигири"
+  },
+  "p39": {
+   "name": "The Бык",
+   "cat": "food",
+   "addr": "сеть",
+   "lat": null,
+   "lng": null,
+   "status": "want",
+   "tags": [],
+   "lists": [
+    "eat",
+    "budget"
+   ],
+   "log": [],
+   "mine": "Дёшево и вкусно",
+   "rating": 0,
+   "created": 139
+  },
+  "p40": {
+   "name": "Vegan Pyramid",
+   "cat": "food",
+   "addr": "",
+   "lat": null,
+   "lng": null,
+   "status": "want",
+   "tags": [],
+   "lists": [
+    "eat",
+    "budget"
+   ],
+   "log": [],
+   "mine": "Столовая",
+   "rating": 0,
+   "created": 140,
+   "eat": "смузи 0,5 л за 290 ₽"
+  },
+  "p41": {
+   "name": "Котокафе",
+   "cat": "coffee",
+   "addr": "",
+   "lat": null,
+   "lng": null,
+   "status": "want",
+   "tags": [
+    "уточнить"
+   ],
+   "lists": [
+    "eat"
+   ],
+   "log": [],
+   "mine": "Попить кофе с котиками",
+   "rating": 0,
+   "created": 141
+  },
+  "p42": {
+   "name": "Dans Le Noir",
+   "cat": "food",
+   "addr": "",
+   "lat": null,
+   "lng": null,
+   "status": "want",
+   "tags": [],
+   "lists": [
+    "eat",
+    "wish"
+   ],
+   "log": [],
+   "mine": "Ресторан в полной темноте",
+   "rating": 0,
+   "created": 142
+  },
+  "p43": {
+   "name": "Бар Кики",
+   "cat": "bar",
+   "addr": "",
+   "lat": null,
+   "lng": null,
+   "status": "want",
+   "tags": [],
+   "lists": [
+    "eat"
+   ],
+   "log": [],
+   "mine": "",
+   "rating": 0,
+   "created": 143
+  },
+  "p44": {
+   "name": "Carpaccio Coffee",
+   "cat": "coffee",
+   "addr": "",
+   "lat": null,
+   "lng": null,
+   "status": "want",
+   "tags": [],
+   "lists": [
+    "eat"
+   ],
+   "log": [],
+   "mine": "Кофейня с машинами",
+   "rating": 0,
+   "created": 144
+  },
+  "p45": {
+   "name": "Стрелковый клуб №1",
+   "cat": "fun",
+   "addr": "",
+   "lat": null,
+   "lng": null,
+   "status": "want",
+   "tags": [],
+   "lists": [
+    "wish"
+   ],
+   "log": [],
+   "mine": "Посмотреть, где виновница",
+   "rating": 0,
+   "created": 145
+  },
+  "p46": {
+   "name": "Пиги плэйс",
+   "cat": "fun",
+   "addr": "",
+   "lat": null,
+   "lng": null,
+   "status": "want",
+   "tags": [
+    "уточнить"
+   ],
+   "lists": [
+    "wish"
+   ],
+   "log": [],
+   "mine": "",
+   "rating": 0,
+   "created": 146
+  },
+  "p47": {
+   "name": "Квест",
+   "cat": "fun",
+   "addr": "",
+   "lat": null,
+   "lng": null,
+   "status": "want",
+   "tags": [
+    "уточнить"
+   ],
+   "lists": [
+    "wish"
+   ],
+   "log": [],
+   "mine": "Выбрать какой",
+   "rating": 0,
+   "created": 147
+  },
+  "p48": {
+   "name": "Stantion",
+   "cat": "other",
+   "addr": "фотостудия",
+   "lat": null,
+   "lng": null,
+   "status": "want",
+   "tags": [],
+   "lists": [
+    "photo"
+   ],
+   "log": [],
+   "mine": "",
+   "rating": 0,
+   "created": 148
+  },
+  "p49": {
+   "name": "Cistern",
+   "cat": "culture",
+   "addr": "выставочное пространство",
+   "lat": null,
+   "lng": null,
+   "status": "want",
+   "tags": [],
+   "lists": [
+    "expo"
+   ],
+   "log": [],
+   "mine": "",
+   "rating": 0,
+   "created": 149
+  },
+  "p50": {
+   "name": "Эрарта",
+   "cat": "culture",
+   "addr": "29-я линия В.О., 2",
+   "lat": 59.9318,
+   "lng": 30.2508,
+   "status": "want",
+   "tags": [],
+   "lists": [
+    "expo"
+   ],
+   "log": [],
+   "mine": "",
+   "rating": 0,
+   "created": 150
   }
  },
  "reels": {

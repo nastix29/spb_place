@@ -75,6 +75,9 @@ textarea{resize:vertical;min-height:84px}
 .card h3{margin:2px 0 0;font:800 25px/1 'Onest';letter-spacing:-.05em}
 .caddr{font:500 13px 'Onest';opacity:.8}
 .cq{font:500 14.5px/1.35 'Onest'}
+.ceat{font:600 14px/1.35 'Onest';background:#ffffff40;border-radius:16px;padding:9px 12px}
+.card:not(.v-lav):not(.v-ink):not(.v-olive) .ceat{background:#fff}
+.v-ink .ceat{background:#ffffff1f}
 .cq::before{content:'«'}.cq::after{content:'»'}
 .ctags{display:flex;flex-wrap:wrap;gap:5px;margin-top:2px}
 .tt{font:500 12px 'Onest';padding:4px 9px;border-radius:999px;background:#0000000d}
@@ -218,7 +221,7 @@ const CATS={
   culture:{n:'культура',c:'#5B57F0',v:'olive'},
   walk:{n:'гулять',c:'#2B8A57',v:'g'},
   fun:{n:'движ',c:'#E39B00',v:'lav'},
-  market:{n:'рынки',c:'#D23F78',v:'olive'},
+  market:{n:'рынки и магазины',c:'#D23F78',v:'olive'},
   other:{n:'другое',c:'#6B6B6B',v:'g'}
 };
 const CAT_ORDER=Object.keys(CATS);
@@ -238,7 +241,7 @@ function visible(){
     if(F.cat&&p.cat!==F.cat)return false;
     if(F.repeat&&!(p.tags||[]).includes(REPEAT))return false;
     if(F.list&&!(p.lists||[]).includes(F.list))return false;
-    if(q){const hay=[p.name,p.addr,p.mine,p.rec&&p.rec.text,(p.tags||[]).join(' '),(p.log||[]).map(x=>x.t).join(' ')].join(' ').toLowerCase();if(!hay.includes(q))return false}
+    if(q){const hay=[p.name,p.addr,p.mine,p.eat,p.rec&&p.rec.text,(p.tags||[]).join(' '),(p.log||[]).map(x=>x.t).join(' ')].join(' ').toLowerCase();if(!hay.includes(q))return false}
     return true;
   }).sort((a,b)=>(CAT_ORDER.indexOf(a.cat)-CAT_ORDER.indexOf(b.cat))||((a.created||0)-(b.created||0)));
 }
@@ -355,6 +358,7 @@ function listResults(){
       <h3>${esc(p.name)}</h3>
       ${p.addr?`<div class="caddr">${esc(p.addr)}</div>`:''}
       ${q?`<div class="cq">${esc(q.length>140?q.slice(0,137)+'…':q)}</div>`:''}
+      ${p.eat?`<div class="ceat">🍴 ${esc(p.eat)}</div>`:''}
       ${tags.length?`<div class="ctags">${tags.map(t=>`<span class="tt ${t===REPEAT?'rep':''}">${t===REPEAT?'★ ':''}${esc(t)}</span>`).join('')}</div>`:''}
       <div class="cfoot">${p.status==='been'?'✓ была':p.status==='want'?'○ хочу':''}${p.rating?` · ${p.rating}/5`:''}${nm?` · ${nm} фото/видео`:''}${nr?` · ▶ ${nr}`:''}</div>
     </div>`});
@@ -396,12 +400,13 @@ function detailHTML(id){
     <div class="dcat"><span class="cpill"><span class="dot" style="background:${c.c}"></span>${c.n}</span></div>
     <h2 class="dname">${esc(p.name)}</h2>
     ${p.addr?`<div class="daddr">${esc(p.addr)}</div>`:''}
-    <div class="dacts"><a class="btn white" href="${ymaps(p)}" target="_blank" rel="noopener">яндекс карты ↗</a></div>
+    <div class="dacts"><a class="btn white" href="${ymaps(p)}" target="_blank" rel="noopener">яндекс карты ↗</a>${p.url?`<a class="btn white" href="${esc(p.url)}" target="_blank" rel="noopener">сайт ↗</a>`:''}</div>
   </div>
   ${media.length||(w&&assets)?`<div class="gal">${media.map((m,i)=>`<div class="gi">${m.t==='v'?`<video src="${murl(m)}" playsinline controls preload="metadata"></video>`:`<img src="${murl(m)}" loading="lazy" alt="">`}${w?`<button class="x" data-act="media-del" data-v="${i}">×</button>`:''}</div>`).join('')}
     ${w&&assets?`<div class="gi add" data-act="upload"><div><b>+</b>${uploading?'загружаю…':'фото / видео'}</div></div>`:''}</div>`:''}
   <div class="blk ${w?'':'hidden'}"><div class="seg">${[['want','хочу сходить'],['been','была ✓']].map(([k,l])=>`<button class="segb ${p.status===k?'on':''}" data-act="status" data-v="${k}" ${w?'':'disabled'}>${l}</button>`).join('')}</div>
     <div class="rate">${[1,2,3,4,5].map(n=>`<button data-act="rate" data-v="${n}" class="${(p.rating||0)>=n?'on':''}" ${w?'':'disabled'}>${n}</button>`).join('')}</div></div>
+  ${p.eat?`<div class="blk" style="background:var(--ink);color:#fff"><h4>🍴 что заказать</h4><div class="quote">${esc(p.eat)}</div></div>`:''}
   ${p.rec&&p.rec.text?`<div class="blk lav"><h4>совет — ${esc(p.rec.from||'друг')}</h4><div class="quote">${esc(p.rec.text)}</div></div>`:''}
   ${w||p.mine?`<div class="blk"><h4>мой отзыв</h4>`:''}${w?`<textarea id="mine" placeholder="как тебе? что запомнилось?">${esc(p.mine||'')}</textarea><button class="btn dark small" style="margin-top:8px" data-act="mine-save">сохранить</button>`:p.mine?`<div class="quote">${esc(p.mine)}</div></div>`:''}
   ${w||log.length?`<div class="blk"><h4>что ела · визиты</h4>`:''}
